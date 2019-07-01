@@ -7,7 +7,8 @@ class DiceGame extends Component {
 		super(props);
 		this.state = {
 			diceOne : 'Dice fa fa-dice-six',
-			diceTwo : 'Dice fa fa-dice-six'
+			diceTwo : 'Dice fa fa-dice-six',
+			value : 'Roll the Dice!'
 		}
 		this.handleClick = this.handleClick.bind(this);
 	}
@@ -16,8 +17,10 @@ class DiceGame extends Component {
 		let diceArr = ['one', 'two', 'three', 'four', 'five', 'six'];
 		let diceClass1 = 'Dice fa fa-dice-' + diceArr[Math.floor(Math.random()*diceArr.length)];
 		let diceClass2 = 'Dice fa fa-dice-' + diceArr[Math.floor(Math.random()*diceArr.length)];
-		this.setState({diceOne : diceClass1, diceTwo : diceClass2});
-		console.log(this.state)
+		this.setState({diceOne : diceClass1, diceTwo : diceClass2, value: 'Rolling...'});
+		setTimeout(() => {
+			this.setState({value: 'Roll the Dice!'})
+		}, 1000)
 	}
 
 	render(){
@@ -27,7 +30,7 @@ class DiceGame extends Component {
 					<Dice classList={this.state.diceOne}/>	
 					<Dice classList={this.state.diceTwo}/>
 				</section>
-				<button onClick={this.handleClick} className="DiceGame-btn"> Roll the Dice!</button>
+				<button onClick={this.handleClick} className="DiceGame-btn"> {this.state.value}</button>
 			</section>
 		)
 	}
