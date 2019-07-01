@@ -18,10 +18,20 @@ class DiceGame extends Component {
 		let diceArr = ['one', 'two', 'three', 'four', 'five', 'six'];
 		let diceClass1 = 'Dice fa fa-dice-' + diceArr[Math.floor(Math.random()*diceArr.length)];
 		let diceClass2 = 'Dice fa fa-dice-' + diceArr[Math.floor(Math.random()*diceArr.length)];
-		this.setState({diceOne : diceClass1, diceTwo : diceClass2, value: 'Rolling...', disabled : true});
+		this.setState({
+			diceOne : diceClass1 + ' rolling', 
+			diceTwo : diceClass2 + ' rolling', 
+			value: 'Rolling...', 
+			disabled : true
+		});
 		setTimeout(() => {
-			this.setState({value : 'Roll the Dice!', disabled : false})
-		}, 1000)
+			this.setState({
+				value : 'Roll the Dice!', 
+				disabled : false, 
+				diceOne : diceClass1, 
+				diceTwo : diceClass2
+			})
+		}, 800)
 	}
 
 	render(){
