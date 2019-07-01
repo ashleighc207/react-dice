@@ -16,3 +16,7 @@
 	padding: 10px 52px;
 	outline: none;
 }
+
+.DiceGame-btn[disabled] {
+	background: rgba(33, 33, 33, 0.3);
+}

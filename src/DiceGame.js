@@ -8,7 +8,8 @@ class DiceGame extends Component {
 		this.state = {
 			diceOne : 'Dice fa fa-dice-six',
 			diceTwo : 'Dice fa fa-dice-six',
-			value : 'Roll the Dice!'
+			value : 'Roll the Dice!',
+			disabled : false
 		}
 		this.handleClick = this.handleClick.bind(this);
 	}
@@ -17,9 +18,9 @@ class DiceGame extends Component {
 		let diceArr = ['one', 'two', 'three', 'four', 'five', 'six'];
 		let diceClass1 = 'Dice fa fa-dice-' + diceArr[Math.floor(Math.random()*diceArr.length)];
 		let diceClass2 = 'Dice fa fa-dice-' + diceArr[Math.floor(Math.random()*diceArr.length)];
-		this.setState({diceOne : diceClass1, diceTwo : diceClass2, value: 'Rolling...'});
+		this.setState({diceOne : diceClass1, diceTwo : diceClass2, value: 'Rolling...', disabled : true});
 		setTimeout(() => {
-			this.setState({value: 'Roll the Dice!'})
+			this.setState({value : 'Roll the Dice!', disabled : false})
 		}, 1000)
 	}
 
@@ -30,7 +31,12 @@ class DiceGame extends Component {
 					<Dice classList={this.state.diceOne}/>	
 					<Dice classList={this.state.diceTwo}/>
 				</section>
-				<button onClick={this.handleClick} className="DiceGame-btn"> {this.state.value}</button>
+				<button 
+					onClick={this.handleClick} 
+					className="DiceGame-btn" 
+					disabled={this.state.disabled}> 
+					{this.state.value}
+				</button>
 			</section>
 		)
 	}
