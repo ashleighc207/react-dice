@@ -3,10 +3,8 @@ import './Dice.css';
 
 class Dice extends Component {
 	render(){
-		let classes;
-		{this.props.rolling ? classes = `Dice fas fa-dice-${this.props.face} rolling` : classes = `Dice fas fa-dice-${this.props.face}`}
 		return(
-			<i className={classes}></i>
+			<i className={`Dice fas fa-dice-${this.props.face} ${this.props.rolling ? 'rolling' : null}`}></i>
 		)
 	}
 }

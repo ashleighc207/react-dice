@@ -6,10 +6,9 @@ class DiceGame extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			diceOne : 'Dice fas fa-dice-six',
-			diceTwo : 'Dice fas fa-dice-six',
+			diceOne : 'six',
+			diceTwo : 'six',
 			value : 'Roll the Dice!',
-			disabled : false,
 			rolling : false
 		}
 		this.rollDice = this.rollDice.bind(this);
@@ -25,13 +24,11 @@ class DiceGame extends Component {
 			diceOne : diceFace1,
 			diceTwo : diceFace2,
 			value : 'Rolling...', 
-			disabled : true
 		});
 
 		setTimeout(() => {
 			this.setState({
 				value : 'Roll the Dice!', 
-				disabled : false,
 				rolling : false
 			})
 		}, 800)
@@ -47,7 +44,7 @@ class DiceGame extends Component {
 				<button 
 					onClick={this.rollDice} 
 					className="DiceGame-btn" 
-					disabled={this.state.disabled}> 
+					disabled={this.state.rolling}> 
 					{this.state.value}
 				</button>
 			</section>

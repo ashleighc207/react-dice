@@ -5,8 +5,7 @@
 ## Description
 This is a simple game where two random dice will change when you press the button, or "roll" them. This app utilizes state to conditionally display logic.
 
-<!-- <img src="example.png" alt="Example image" width="350" align="center"/> -->
-
+<img src="example.png" alt="Example image" width="350" align="center"/>
 
 ## How to Launch the App
 Download or clone this repo to your machine
@@ -16,15 +15,10 @@ Download or clone this repo to your machine
 ## Dependencies
 - create-react-app
 - Google Fonts - Roboto (400, 500)
-
+- Font Awesome
 
 ## How to Use
-Fork this respository, then clone it to your local machine. Create a simple HTTP server using Python, http-server, or your serving tool of choice. _Note: You do not need to know Python for this._  Check your Python version before starting by running `python -V` from the terminal.
-
-#### Create-React-App
-- Run `npm start` in the root directory to start the server and launch the app
-
-Once the server is up and running, navigate to `localhost:8000` to see the app in action! 
+Fork this respository, then clone it to your local machine. Run `npm start` in the root directory to start the server and launch the app
 
 #### Fork this repository:
 Click the Fork button in the top right
