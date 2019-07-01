@@ -4,7 +4,7 @@ import './Dice.css';
 class Dice extends Component {
 	render(){
 		return(
-			<h1> This is one </h1>
+			<i className="fa fa-dice-six Dice"></i>
 		)
 	}
 }

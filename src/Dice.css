@@ -1,0 +1,7 @@
+.Dice {
+	background: linear-gradient(to top, rgba(99,136,226,0.6811099439775911) 0%, rgba(166,117,244,0.835171568627451) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 150px;
+  margin: 20px 40px;
+}
