@@ -9,27 +9,30 @@ class DiceGame extends Component {
 			diceOne : 'Dice fas fa-dice-six',
 			diceTwo : 'Dice fas fa-dice-six',
 			value : 'Roll the Dice!',
-			disabled : false
+			disabled : false,
+			rolling : false
 		}
 		this.rollDice = this.rollDice.bind(this);
 	}
 
 	rollDice(e){
-		let diceArr = ['one', 'two', 'three', 'four', 'five', 'six'];
-		let diceClass1 = 'Dice fas fa-dice-' + diceArr[Math.floor(Math.random()*diceArr.length)];
-		let diceClass2 = 'Dice fas fa-dice-' + diceArr[Math.floor(Math.random()*diceArr.length)];
+		let diceArr = ['one', 'two', 'three', 'four', 'five', 'six'],
+		diceFace1 = diceArr[Math.floor(Math.random()*diceArr.length)],
+		diceFace2 = diceArr[Math.floor(Math.random()*diceArr.length)];
+		
 		this.setState({
-			diceOne : diceClass1 + ' rolling', 
-			diceTwo : diceClass2 + ' rolling', 
-			value: 'Rolling...', 
+			rolling : true,
+			diceOne : diceFace1,
+			diceTwo : diceFace2,
+			value : 'Rolling...', 
 			disabled : true
 		});
+
 		setTimeout(() => {
 			this.setState({
 				value : 'Roll the Dice!', 
-				disabled : false, 
-				diceOne : diceClass1, 
-				diceTwo : diceClass2
+				disabled : false,
+				rolling : false
 			})
 		}, 800)
 	}
@@ -38,8 +41,8 @@ class DiceGame extends Component {
 		return(
 			<section className="DiceGame">
 				<section className="DiceGame-inner">
-					<Dice classList={this.state.diceOne}/>	
-					<Dice classList={this.state.diceTwo}/>
+					<Dice face={this.state.diceOne} rolling={this.state.rolling}/>	
+					<Dice face={this.state.diceTwo} rolling={this.state.rolling}/>
 				</section>
 				<button 
 					onClick={this.rollDice} 
