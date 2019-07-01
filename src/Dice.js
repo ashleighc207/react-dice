@@ -4,7 +4,7 @@ import './Dice.css';
 class Dice extends Component {
 	render(){
 		return(
-			<i className={`Dice fas fa-dice-${this.props.face} ${this.props.rolling ? 'rolling' : null}`}></i>
+			<i className={`Dice fas fa-dice-${this.props.face} ${this.props.rolling && 'rolling'}`}></i>
 		)
 	}
 }
